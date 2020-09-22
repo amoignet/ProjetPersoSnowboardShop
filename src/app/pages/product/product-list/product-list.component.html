@@ -1,1 +1,11 @@
-<p>product-list works!</p>
+<div>
+    <h2>Snowboards</h2>
+    <app-product-item *ngFor="let product of products; let i=index"
+        [productBrand]="product.brand"
+        [productModel]="product.model"
+        [productSize]="product.size"
+        [productImage]="product.image"
+        [productDescription]="product.description"
+        [productPrice]="product.price"
+    ></app-product-item>
+</div>
