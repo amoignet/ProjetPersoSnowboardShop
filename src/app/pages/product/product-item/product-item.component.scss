@@ -1,0 +1,16 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: thick double #32a1ce;
+    margin: 5px;
+    
+}
+
+.text {
+    margin: 1px;
+}
+
+#image {
+    width: 300px;
+}
