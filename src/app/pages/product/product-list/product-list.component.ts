@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit , OnDestroy{
     this.productService.emitProductsSubject();
   }
 
-   goToDetail(id: number): void {
+  goToDetail(id: number): void {
     this.router.navigate(['/detail', id]);
   }
 

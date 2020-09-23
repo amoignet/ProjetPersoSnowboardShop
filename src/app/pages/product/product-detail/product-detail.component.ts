@@ -10,26 +10,16 @@ import { ProductService } from '../../../services/product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() productId: number;
-  @Input() productBrand: string;
-  @Input() productModel: string;
-  @Input() productSize: number;
-  @Input() productImage: string;
-  @Input() productDescription: string;
-  @Input() productPrice: number;
-
-  product: Product;
+  productDetails: Product;
 
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): any {
-  //   this.product = new Product();
-  //   id = this.route.snapshot.params['id'];
-  //   this.productService.getOneProduct(id).then(
-  //     (product: Product) => {
-  //       this.product = product;
-  //     }
-  //   );
+    // tslint:disable-next-line: no-string-literal
+    const id = this.route.snapshot.params['id'];
+    if (id) {
+      this.productDetails = this.productService.getOneProduct(id);
+    }
   }
 
 }
