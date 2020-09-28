@@ -9,6 +9,9 @@ import { ProductViewComponent } from './pages/admin/product-view/product-view.co
 import { ProductListComponent } from './pages/product/product-list/product-list.component';
 import { ProductItemComponent } from './pages/product/product-item/product-item.component';
 import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component';
+import { SignInComponent } from './pages/user/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/user/sign-up/sign-up.component';
+import { CartComponent } from './pages/product/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { ProductDetailComponent } from './pages/product/product-detail/product-d
     ProductListComponent,
     ProductItemComponent,
     ProductDetailComponent,
+    SignInComponent,
+    SignUpComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

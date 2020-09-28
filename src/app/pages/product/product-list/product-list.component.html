@@ -1,8 +1,8 @@
 <div >
-    <h2>Snowboards</h2>
+    <!-- <h2>Snowboards</h2> -->
     <div class="container">
-        <ul class="list">
-            <app-product-item *ngFor="let product of products; let i=index"
+        <div class="list">
+            <app-product-item class="item" *ngFor="let product of products; let i=index"
             (click)="goToDetail(i)"
                 [productId]="i"
                 [productBrand]="product.brand"
@@ -12,6 +12,6 @@
                 [productDescription]="product.description"
                 [productPrice]="product.price"
             ></app-product-item>
-        </ul>
+        </div>
     </div>
 </div>
