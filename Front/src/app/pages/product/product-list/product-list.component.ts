@@ -21,6 +21,7 @@ export class ProductListComponent implements OnInit , OnDestroy{
     this.productSubscription = this.productService.productsSubject.subscribe(
       (products: []) => this.products = products);
     this.productService.emitProductsSubject();
+    this.productService.getAllProduct();
   }
 
   goToDetail(id: number): void {
