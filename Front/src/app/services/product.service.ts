@@ -91,11 +91,11 @@ export class ProductService {
   }
 
   getAllProduct(): void {
-    this.http.get('http://localhost:3000/api/product').subscribe(
+    this.http.get('http://localhost:3000/product').subscribe(
       (products: Product[]) => {
         if (products) {
           this.products = products;
-          // console.log('products:', products);
+          console.log('products:', products);
           this.emitProductsSubject();
         }
       },
