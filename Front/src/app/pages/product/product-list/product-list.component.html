@@ -2,9 +2,9 @@
     <!-- <h2>Snowboards</h2> -->
     <div class="container">
         <div class="list">
-            <app-product-item class="item" *ngFor="let product of products; let i=index"
-            (click)="goToDetail(i)"
-                [productId]="i"
+            <app-product-item class="item" *ngFor="let product of products"
+            (click)="goToDetail(product._id)"
+                [productId]='product._id'
                 [productBrand]="product.brand"
                 [productModel]="product.model"
                 [productSize]="product.size"

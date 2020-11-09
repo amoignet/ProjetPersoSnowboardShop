@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
-  @Input() productId: number;
+  @Input() productId: string;
   @Input() productBrand: string;
   @Input() productModel: string;
   @Input() productSize: number;
@@ -19,5 +19,6 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }

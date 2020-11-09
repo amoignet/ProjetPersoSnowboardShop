@@ -1,1 +1,42 @@
-<p>create-new-product works!</p>
+<div class="container">
+    <div>
+        <h2 class="title">Ajouter un nouveau produit</h2>
+        <form [formGroup]="addProduct" (ngSubmit)="onAddProduct()">
+            <ul class="flex-outer">
+                <li>
+                    <label for="brand">Marque</label>
+                    <input type="text" id="brand" formControlName="brand" required>
+                </li>
+    
+                <li>
+                    <label for="model">Modèle</label>
+                    <input type="text" id="model" formControlName="model" required>
+                </li>
+    
+                <li>
+                    <label for="size">Taille</label>
+                    <input type="text" id="size" formControlName="size" required>
+                </li>
+    
+                <li>
+                    <label for="image">Image</label>
+                    <input type="text" id="image" formControlName="image" required>
+                </li>
+    
+                <li>
+                    <label for="description">Description</label>
+                    <textarea type="text" id="description" formControlName="description" required></textarea>
+                </li>
+    
+                <li>
+                    <label for="price">Prix</label>
+                    <input type="text" id="price" formControlName="price" required>
+                </li>
+    
+                <button type="submit" [disabled]=addProduct.invalid>Enregistrer</button>
+
+            </ul>
+
+        </form>
+    </div>
+</div>

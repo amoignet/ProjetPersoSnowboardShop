@@ -1,13 +1,26 @@
 <div>
 
-    <div *ngFor="let product of productDetails">
-        <img [src]=product.image>
-        <p>{{ product.brand }}</p>
-        <p>{{ product.model }}</p>
-        <p>{{ product.size }} cm</p>
-        <p>{{ product.price }} €</p>
-        <p>{{ product.description }}</p>
+    <div class="container">
+        <div class="picture">
+            <img [src]=product.image  alt="snowboard image">
+        </div>
+        <div class="text">
+            <div class="title">
+                <div class="titleAndButton" id="brandAndModel">
+                    <h2>{{ product.brand }}</h2>
+                    <h2>{{ product.model }}</h2>
+                </div>
+                <div class="titleAndButton" id="sizeAndPrice">
+                    <h3>{{ product.size }} cm</h3>
+                    <h3>{{ product.price | number : '1.2-2' }} €</h3>
+                </div>
+                <div class="titleAndButton" id="buttonCartAndLink">
+                    <button>Ajouter au panier</button>
+                    <button [routerLink]="['/product']" routerLinkActive="router-link-active" >Retourner à la liste complète</button>
+                </div>
+            </div >
+            <p class="description" [innerHTML]="product.description">
+        </div>
     </div>
-    <button>Ajouter au panier</button>
-    <button [routerLink]="['/product']" routerLinkActive="router-link-active" >Retourner à la liste complète</button>
 </div>
+        

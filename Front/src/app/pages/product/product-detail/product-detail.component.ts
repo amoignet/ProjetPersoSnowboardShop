@@ -1,5 +1,5 @@
-import { Router, ActivatedRoute } from '@angular/router';
-import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models.ts/productClass';
 import { ProductService } from '../../../services/product.service';
 
@@ -10,16 +10,26 @@ import { ProductService } from '../../../services/product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  productDetails: Product;
+  product: Product = null;
+  public id: string;
 
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): any {
-    // tslint:disable-next-line: no-string-literal
-    const id = this.route.snapshot.params['id'];
-    if (id) {
-      this.productDetails = this.productService.getOneProduct(id);
-    }
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.id = params.get('id');
+    });
+    this.displayOneProduct(this.id);
+  }
+
+  displayOneProduct(id: string): void {
+    this.productService.getOneProduct(id)
+      .subscribe(data => {
+        return this.product = data;
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }

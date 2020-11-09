@@ -13,6 +13,8 @@ import { ProductDetailComponent } from './pages/product/product-detail/product-d
 import { SignInComponent } from './pages/user/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/user/sign-up/sign-up.component';
 import { CartComponent } from './pages/product/cart/cart.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { CartComponent } from './pages/product/cart/cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

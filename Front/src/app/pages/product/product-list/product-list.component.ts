@@ -12,6 +12,7 @@ import { Router} from '@angular/router';
 })
 export class ProductListComponent implements OnInit , OnDestroy{
 
+  product: Product;
   products: Product[] = [];
   productSubscription: Subscription;
 
@@ -21,11 +22,14 @@ export class ProductListComponent implements OnInit , OnDestroy{
     this.productSubscription = this.productService.productsSubject.subscribe(
       (products: []) => this.products = products);
     this.productService.emitProductsSubject();
-    this.productService.getAllProduct();
+    // this.productService.getAllProduct();
+    this.productService.getAllProduct().subscribe((products) => {
+      this.products = products;
+    });
   }
 
-  goToDetail(id: number): void {
-    this.router.navigate(['/detail', id]);
+  goToDetail(id: string): void {
+    this.router.navigate(['/detail/' + id]);
   }
 
   ngOnDestroy(): void {

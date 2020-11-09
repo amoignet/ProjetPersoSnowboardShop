@@ -1,5 +1,6 @@
 export class Product {
-  id: number;
+  // tslint:disable-next-line: variable-name
+  _id: string;
   brand: string;
   model: string;
   size: number;
@@ -7,13 +8,9 @@ export class Product {
   description: string;
   price: number;
 
-  constructor( id, brand, model, size, image, description, price ) {
-    this.id = id;
-    this.brand = brand;
-    this.model = model;
-    this.size = size;
-    this.image = image;
-    this.description = description;
-    this.price = price;
+  constructor(input?: Product) {
+    if (input != null) {
+      Object.assign(this, input);
+    }
   }
 }
